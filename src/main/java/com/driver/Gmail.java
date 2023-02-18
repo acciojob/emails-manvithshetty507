@@ -28,11 +28,12 @@ public class Gmail extends Email {
         // 1. Each mail in the inbox is distinct.
         // 2. The mails are received in non-decreasing order. This means that the date of a new mail is greater than equal to the dates of mails received already.
 
-        if(mails.size() >= this.inboxCapacity){
+        if(mails.size() == this.inboxCapacity){
             trash.add(mails.get(0));
             mails.remove(0);
         }
         mails.add(new myMail(date, sender, message));
+        return;
     }
 
     public void deleteMail(String message){
