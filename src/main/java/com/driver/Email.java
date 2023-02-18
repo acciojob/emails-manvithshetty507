@@ -5,6 +5,14 @@ public class Email {
     private String emailId;
     private String password;
 
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public Email(String emailId){
         this.emailId = emailId;
         this.password = "Accio@123";
@@ -33,7 +41,7 @@ public class Email {
                 if(c > 97 && c < 124){
                     lc = true;
                 }
-                else if(c >64 && c <91){
+                else if(c > 64 && c <91){
                     uc = true;
                 }
                 else if(c > 47 && c < 58){
