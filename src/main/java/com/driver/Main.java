@@ -18,7 +18,7 @@ public class Main {
         gmail.receiveMail(new SimpleDateFormat("dd/MM/yyyy").parse("23/12/2022"), "Tushar", "Everything looks good.");
 
         System.out.println("Total " + gmail.getInboxSize() + " mails in inbox.");
-        System.out.println("There are " + gmail.findMailsBetweenDates(new SimpleDateFormat("dd/MM/yyyy").parse("21/12/2022"), new SimpleDateFormat("dd/MM/yyyy").parse("22/12/2022")) + " mails between given dates!");
+        System.out.println("There are " + gmail.findMailsBetweenDates(new SimpleDateFormat("dd/MM/yyyy").parse("20/12/2022"), new SimpleDateFormat("dd/MM/yyyy").parse("23/12/2022")) + " mails between given dates!");
         gmail.deleteMail("Everything looks good.");
         System.out.println("The latest message is :" + gmail.findLatestMessage());
         gmail.deleteMail("Assignment to be uploaded on database.");
@@ -34,5 +34,7 @@ public class Main {
         workspace.addMeeting(new Meeting(LocalTime.parse("18:20"), LocalTime.parse("19:10")));
         workspace.addMeeting(new Meeting(LocalTime.parse("19:50"), LocalTime.parse("21:05")));
         System.out.println("Maximum meetings you can attend in a day is " + workspace.findMaxMeetings());
+
+
     }
 }
