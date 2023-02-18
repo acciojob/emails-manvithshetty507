@@ -31,7 +31,7 @@ public class Workspace extends Gmail{
         HashSet<LocalTime> time = new HashSet<>();
         for(int i=0;i<calendar.size();i++){
             LocalTime st = calendar.get(i).getStartTime();
-            if(!time.contains(st)){
+            if(!time.isEmpty() && !time.contains(st)){
                 time.add(st);
                 count++;
             }

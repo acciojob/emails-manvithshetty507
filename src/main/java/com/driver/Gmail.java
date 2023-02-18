@@ -11,6 +11,8 @@ public class Gmail extends Email {
     ArrayList<myMail> mails;
     ArrayList<myMail> trash;
 
+
+
     public Gmail(String emailId, int inboxCapacity) {
         super(emailId);
         this.inboxCapacity = inboxCapacity;
@@ -26,7 +28,7 @@ public class Gmail extends Email {
         // 1. Each mail in the inbox is distinct.
         // 2. The mails are received in non-decreasing order. This means that the date of a new mail is greater than equal to the dates of mails received already.
 
-        while(mails.size() >= this.inboxCapacity){
+        if(mails.size() >= this.inboxCapacity){
             trash.add(mails.get(0));
             mails.remove(0);
         }
@@ -38,8 +40,9 @@ public class Gmail extends Email {
         // If the given message is found in any mail in the inbox, move the mail to trash, else do nothing
 
         for(int i=0;i<mails.size();i++){
+
             if(message.equals(mails.get(i).msg)){
-                mails.remove(i);
+                trash.add(mails.remove(i));
             }
         }
         return;
@@ -84,7 +87,6 @@ public class Gmail extends Email {
     public int getInboxSize(){
         return mails.size();
         // Return number of mails in inbox
-
     }
 
     public int getTrashSize(){
